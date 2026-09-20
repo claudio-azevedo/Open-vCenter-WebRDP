@@ -17,6 +17,10 @@ RUN mvn package -DskipTests \
 # IMPORTANT: Tomcat 10+ uses jakarta.servlet and is NOT compatible with guacamole-common 1.6.0
 FROM tomcat:9-jdk11-temurin-jammy
 
+LABEL org.opencontainers.image.source=https://github.com/claudio-azevedo/Open-vCenter-WebRDP
+LABEL org.opencontainers.image.description="Open vCenter WEBRDP"
+LABEL org.opencontainers.image.licenses=APACHE-2.0
+
 # Remove default webapps
 RUN rm -rf /usr/local/tomcat/webapps/*
 
