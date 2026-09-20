@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: #1a1a2e;
+    color: #eee;
+    min-height: 100vh;
+}
+
+/* Connection Form */
+.form-container {
+    max-width: 420px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #16213e;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+
+.form-container h1 {
+    text-align: center;
+    color: #4fc3f7;
+    margin-bottom: 4px;
+    font-size: 1.8rem;
+}
+
+.subtitle {
+    text-align: center;
+    color: #888;
+    margin-bottom: 24px;
+    font-size: 0.9rem;
+}
+
+.form-group {
+    margin-bottom: 14px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 0.85rem;
+    color: #aaa;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #333;
+    border-radius: 6px;
+    background: #0f3460;
+    color: #eee;
+    font-size: 0.95rem;
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #4fc3f7;
+}
+
+.btn-connect {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    background: #4fc3f7;
+    color: #1a1a2e;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-connect:hover {
+    background: #29b6f6;
+}
+
+/* RDP Container */
+#rdp-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: #000;
+}
+
+#toolbar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    background: #16213e;
+    border-bottom: 1px solid #333;
+    z-index: 10;
+}
+
+#toolbar button {
+    padding: 6px 14px;
+    background: #0f3460;
+    color: #4fc3f7;
+    border: 1px solid #4fc3f7;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: background 0.2s;
+}
+
+#toolbar button:hover {
+    background: #4fc3f7;
+    color: #1a1a2e;
+}
+
+#status-text {
+    margin-left: auto;
+    font-size: 0.8rem;
+    color: #888;
+}
+
+#clipboard-panel {
+    padding: 8px 12px;
+    background: #0f3460;
+    border-bottom: 1px solid #333;
+}
+
+#clipboard-text {
+    width: 100%;
+    height: 60px;
+    padding: 8px;
+    background: #1a1a2e;
+    color: #eee;
+    border: 1px solid #333;
+    border-radius: 4px;
+    resize: vertical;
+    font-size: 0.85rem;
+}
+
+#btn-type-clipboard {
+    margin-top: 6px;
+    padding: 6px 14px;
+    background: #0f3460;
+    color: #4fc3f7;
+    border: 1px solid #4fc3f7;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: background 0.2s;
+}
+
+#btn-type-clipboard:hover {
+    background: #4fc3f7;
+    color: #1a1a2e;
+}
+
+#display {
+    flex: 1;
+    overflow: auto;
+    position: relative;
+    text-align: center;
+    background: #000;
+}
+
+/* Hide local cursor over the remote display - Guacamole renders its own */
+#display canvas {
+    cursor: none;
+}
+
+/* Make the Guacamole display element visible and centered */
+#display > div {
+    margin: 0 auto;
+    display: inline-block;
+    cursor: none;
+}

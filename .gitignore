@@ -1,0 +1,6 @@
+.DS_Store
+*.zip
+target/
+
+# Local-only notes, never published
+PRE-PUBLISH.md

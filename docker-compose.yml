@@ -1,0 +1,19 @@
+services:
+  guacd:
+    image: guacamole/guacd:1.6.0
+    restart: unless-stopped
+
+  webrdp:
+    image: ghcr.io/claudio-azevedo/ovc-webrdp:0.1.0
+    ports:
+      - "8080:8080"
+    environment:
+      - GUACD_HOSTNAME=guacd
+      - GUACD_PORT=4822
+      - WEBAPP_CONTEXT=ROOT
+      # Who may embed this app in an iframe. "*" = any origin; lock it to the
+      # ovc-frontend origin in real deployments (e.g. https://ovc.example.net).
+      - WEBRDP_FRAME_ANCESTORS=*
+    depends_on:
+      - guacd
+    restart: unless-stopped
